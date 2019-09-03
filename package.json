@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && node pack.js",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "中琛源黄志",
   "license": "ISC",
   "devDependencies": {
+    "fecha": "^2.3.3",
+    "tar": "^4.4.6",
     "babel-eslint": "^10.0.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",

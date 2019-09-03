@@ -1,0 +1,13 @@
+
+.test > p[data-v-50371ecd] {
+  background-color: aqua;
+}
+
+.test > p[data-v-50371ecd] {
+  color: red;
+}
+
+body {
+  font-size: 30px;
+}
+

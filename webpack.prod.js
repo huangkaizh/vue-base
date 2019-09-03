@@ -49,7 +49,7 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.css' // 指定输出的css文件名
-    }),
-    new BundleAnalyzerPlugin() // 使用插件能清晰的展示出打包后的各个bundle所依赖的模块
+    })
+    // new BundleAnalyzerPlugin() // 使用此插件能清晰的展示出打包后的各个bundle所依赖的模块
   ]
 })
