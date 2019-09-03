@@ -1,5 +1,10 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
+const path = require('path')
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = merge(common, {
   mode: 'development', // 开发环境不压缩代码，加快编译速度
