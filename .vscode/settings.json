@@ -1,0 +1,58 @@
+{
+  // tab 大小为2个空格
+  "editor.tabSize": 2,
+  // 100 列后换行
+  "editor.wordWrapColumn": 100,
+  // 保存时格式化
+  "editor.formatOnSave": true,
+  // prettier 设置强制单引号
+  "prettier.singleQuote": true,
+  // prettier 去分号
+  "prettier.semi": false,
+  // prettier 开启eslint规范
+  "prettier.eslintIntegration": true,
+  // prettier 在vue文件禁用
+  "prettier.disableLanguages": ["vue"],
+  // 设置 eslint 保存时自动修复
+  "eslint.autoFixOnSave": true, // try
+  // eslint 检测文件类型
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  // vetur 的自定义设置
+  "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "printWidth": 100,
+      "singleQuote": false
+    },
+    "prettier": {
+      "singleQuote": true,
+      "proseWrap": "never",
+      "printWidth": 100
+    }
+  },
+  // 选择 vue 文件中 template 的格式化工具
+  "vetur.format.defaultFormatter.html": "none",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.postcss": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.less": "prettier",
+  // 文件自动保存
+  "files.autoSave": "afterDelay",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 括号前加空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
