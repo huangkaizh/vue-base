@@ -5,14 +5,6 @@
   "editor.wordWrapColumn": 100,
   // 保存时格式化
   "editor.formatOnSave": true,
-  // prettier 设置强制单引号
-  "prettier.singleQuote": true,
-  // prettier 去分号
-  "prettier.semi": false,
-  // prettier 开启eslint规范
-  "prettier.eslintIntegration": true,
-  // prettier 在vue文件禁用
-  "prettier.disableLanguages": ["vue"],
   // 设置 eslint 保存时自动修复
   "eslint.autoFixOnSave": true, // try
   // eslint 检测文件类型
