@@ -1,5 +1,6 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
+const copyWebpackPlugin = require('copy-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const path = require('path')
 
@@ -8,6 +9,11 @@ module.exports = merge(common, {
 
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.vue$/,
         use: ['vue-loader']
@@ -59,8 +65,14 @@ module.exports = merge(common, {
         }
       }
     }
-  }
-  // plugins: [
-  //   // new BundleAnalyzerPlugin() // 使用此插件能清晰的展示出打包后的各个bundle所依赖的模块
-  // ]
+  },
+  plugins: [
+    new copyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'), // 打包的静态资源目录地址
+        to: './static' // 打包到dist下面的static
+      }
+    ])
+    // new BundleAnalyzerPlugin() // 使用此插件能清晰的展示出打包后的各个bundle所依赖的模块
+  ]
 })

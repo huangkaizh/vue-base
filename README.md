@@ -6,8 +6,17 @@ vscode 需要安装 ESLint、Prettier、Vetur 等插件, 并且安装依赖（np
 #安装依赖
 npm install
 
-#开发调试
-npm run dev
+#测试环境打包（带 source-map）
+npm run build 或 npm run build:stage
 
-#打包
-npm run build
+#生产环境打包
+npm run build:prod
+
+#生产环境项目目录结构
+vue-base
+|-static
+|-|-favicon.ico
+|-index.html
+
+#解压脚本(centos 命令行)
+tar -xzvf vue-base-20191111160625.tar.gz -C vue-base

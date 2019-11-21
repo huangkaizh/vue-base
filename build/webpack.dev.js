@@ -13,22 +13,11 @@ module.exports = merge(common, {
   mode: 'development', // 开发环境不压缩代码，加快编译速度
   devtool: 'source-map', // 提供源码映射文件，以便于调试
   devServer: {
-    port: devServerPort,
-    open: true,
-    overlay: {
-      warnings: false,
-      errors: true
-    },
+    // host: '0.0.0.0', // 需要跨ip查看页面效果时放开
+    open: true, // 需要跨ip查看页面效果时注释
     proxy: {
-      // change xxx-api/login => /mock-api/v1/login
-      // detail: https://cli.vuejs.org/config/#devserver-proxy
       '/api': {
-        target: `http://localhost:${mockServerPort}/mock-api/v1`,
-        changeOrigin: true, // needed for virtual hosted sites
-        ws: true, // proxy websockets
-        pathRewrite: {
-          ['^/api']: ''
-        }
+        target: 'http://172.16.8.102:6080' // 后台接口代理设置 开发环境：http://172.16.5.113:9088 周勇：172.16.8.102:6080
       }
     }
   },
