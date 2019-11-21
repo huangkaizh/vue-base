@@ -1,12 +1,17 @@
 {
   "presets": [
     [
-      "env",
+      "env", // 当前 babel 推荐使用 babel-preset-env 替代 babel-preset-es2015 和 babel-preset-es2016 以及 babel-preset-es2017 ,env的支持范围更广，包含es2015 es2016 es2017的所有语法编译，并且它可以根据项目运行平台的支持情况自行选择编译版本
       {
-        "modules": false
+        "modules": false // 以前我们需要使用babel来将ES6的模块语法转换为AMD, CommonJS，UMD之类的模块化标准语法，但是现在webpack都帮我做了这件事了，所以我们不需要babel来做，因此需要在babel配置项中设置modules为false，因为它默认值是commonjs, 否则的话，会产生冲突
       }
     ],
-    "stage-3"
+    "stage-3" // 提案共分为五个阶段：
+    // stage-0: 稻草人-只是一个大胆的想法
+    // stage-1: 提案-初步尝试
+    // stage-2: 初稿-完成初步规范
+    // stage-3: 候选-完成规范和浏览器初步实现
+    // stage-4: 完成-将被添加到下一年发布
   ],
-  "plugins": ["transform-runtime"]
+  "plugins": ["transform-vue-jsx", "transform-runtime"] // 参考babel-polyfill的几种使用方式： https://www.cnblogs.com/Jeely/p/11231530.html
 }
