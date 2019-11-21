@@ -8,16 +8,5 @@
     ],
     "stage-3"
   ],
-  "plugins": [
-    [
-      "transform-runtime",
-      {
-        "polyfill": false,
-        "regenerator": true
-      }
-    ],
-    "transform-es2015-modules-commonjs",
-    "transform-runtime",
-    "transform-vue-jsx"
-  ]
+  "plugins": ["transform-runtime"]
 }

@@ -2,9 +2,6 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const path = require('path')
 
-const devServerPort = 9527
-const mockServerPort = 9528
-
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -17,7 +14,7 @@ module.exports = merge(common, {
     open: true, // 需要跨ip查看页面效果时注释
     proxy: {
       '/api': {
-        target: 'http://172.16.8.102:6080' // 后台接口代理设置 开发环境：http://172.16.5.113:9088 周勇：172.16.8.102:6080
+        target: 'http://172.16.5.113:9088' // 后台接口代理设置 开发环境：http://172.16.5.113:9088 某后台开发：172.16.8.102:6080
       }
     }
   },
