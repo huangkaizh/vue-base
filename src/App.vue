@@ -42,6 +42,9 @@ export default {
   },
   destroyed () {
     console.log('app destroyed')
+  },
+  errorCaptured () {
+    console.log('app errorCaptured')
   }
 }
 </script>

@@ -48,6 +48,13 @@ export default {
   },
   destroyed () {
     console.log('pageA destroyed')
+  },
+  errorCaptured (err, vm, info) {
+    console.log('pageA errorCaptured')
+    console.log('err', err)
+    console.log('vm', vm)
+    console.log('info', info)
+    return false
   }
 }
 </script>

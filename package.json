@@ -9,7 +9,7 @@
     "build:stage": "webpack --config ./build/webpack.stage.js && node pack.js",
     "build:prod": "webpack --config ./build/webpack.prod.js && node pack.js",
     "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha-webpack --webpack-config ./build/webpack.test.js --require test/setup.js test/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "not ie <= 8"
   ],
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -51,13 +52,18 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
+    "expect": "^24.9.0",
     "fecha": "^2.3.3",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^6.0.0",
+    "jsdom": "^15.2.1",
+    "jsdom-global": "^3.0.2",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "mocha": "^6.2.2",
+    "mocha-webpack": "^2.0.0-beta.0",
     "tar": "^4.4.6",
     "url-loader": "^2.1.0",
     "vue-loader": "^15.7.1",
@@ -67,7 +73,8 @@
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "vue": "^2.6.10",

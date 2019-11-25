@@ -4,7 +4,10 @@ module.exports = {
     document: true,
     localStorage: true,
     window: true,
-    resolve: true
+    resolve: true,
+    describe: true,
+    it: true,
+    expect: true
   },
   env: {
     browser: true

@@ -11,6 +11,7 @@ export default {
   },
   beforeCreate () {
     console.log('PageAChild beforeCreate')
+    throw new Error('PageAChild create error')
   },
   created () {
     console.log('PageAChild created')
