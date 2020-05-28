@@ -1,6 +1,7 @@
 <template>
   <div>
     pageB
+    <a href="#/pageA">pageA</a>
   </div>
 </template>
 

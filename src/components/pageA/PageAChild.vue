@@ -1,9 +1,22 @@
 <template>
-  <div>pageA's Child</div>
+  <div>
+    <span>pageA's Child</span>
+    <div>{{ value }}</div>
+    <img
+      src="http://bi.zcmorefun.com/img/lkfgkjk.png"
+      @error="imgErrorHandler"
+    >
+  </div>
 </template>
 
 <script>
 export default {
+  props: {
+    value: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       a: null
@@ -13,6 +26,10 @@ export default {
     console.log('PageAChild beforeCreate')
     throw new Error('PageAChild create error')
   },
+  // beforeCreate () {
+  //   console.log('PageAChild beforeCreate')
+  //   this.$throw(new Error('PageAChild create error'))
+  // },
   created () {
     console.log('PageAChild created')
   },
@@ -39,6 +56,11 @@ export default {
   },
   destroyed () {
     console.log('PageAChild destroyed')
+  },
+  methods: {
+    imgErrorHandler (event) {
+      event.target.src = 'http://bi.zcmorefun.com/img/z16dkYCP.jpg'
+    }
   }
 }
 </script>
