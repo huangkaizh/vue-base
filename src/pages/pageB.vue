@@ -2,6 +2,12 @@
   <div>
     pageB
     <a href="#/pageA">pageA</a>
+    <div ref="num">
+      {{ number }}
+    </div>
+    <button @click="handleClick">
+      addNum
+    </button>
   </div>
 </template>
 
@@ -9,7 +15,8 @@
 export default {
   data () {
     return {
-      b: null
+      b: null,
+      number: 0
     }
   },
   beforeCreate () {
@@ -41,6 +48,15 @@ export default {
   },
   destroyed () {
     console.log('pageB destroyed')
+  },
+  methods: {
+    handleClick () {
+      console.log(new Date().getTime())
+      for (let i = 0; i < 1000000; i++) {
+        this.number++
+      }
+      console.log(new Date().getTime())
+    }
   }
 }
 </script>
